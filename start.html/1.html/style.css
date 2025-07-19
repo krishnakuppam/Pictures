@@ -1,0 +1,553 @@
+:root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+}
+.container{
+    
+    padding: 20px;
+    display: flex;
+    height: 100vh;
+    width: 1490px;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    position:fixed;
+    
+}
+#logo{
+
+ height: 100px;
+ width: 130px;
+ display: flex;
+ border-radius: 10px;
+ border-right: 10px;
+ padding-top: 10px;
+ background-image: url(https://png.pngtree.com/png-clipart/20230321/original/pngtree-food-business-logo-png-image_8998844.png);
+ background-size: cover;
+ flex-direction: none;
+
+ 
+}
+#logo:hover{
+       box-shadow: 0 10px 3px rgba(0,0,0,0.15);
+                 transition: all 0.3s ease;
+
+}
+#sidelogo{
+    
+    justify-content: space-between;
+    display: flex;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    gap: 20px;
+    overflow: hidden;
+    background: none;
+    
+}
+
+.heading{
+    text-decoration: none;
+    color: white;
+    padding-right: 40px;
+    font-weight: bold;
+    
+    
+}
+.heading:hover{
+       box-shadow: 0 10px 3px rgba(0,0,0,0.15);
+                 transform: scale(1.10);
+
+
+
+}
+
+#box{
+    height: 550px;
+    width: 900px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+    padding-top: px;
+    margin-left: 130px;
+    row-gap: 50px;
+    column-gap: 60px;
+    padding-right: 250px;
+
+    
+}
+.sidebox{
+    height: 250px; 
+    width: 270px;
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+#box1:hover {
+                 box-shadow: 0 10px 3px rgba(0,0,0,0.15);
+                 transform: scale(1.10);
+                 transition: all 0.3s ease;
+       
+
+}      
+#box2{
+    height: 50px;
+    width: 50px;
+    background-color: black;
+    border: 2px solid rgb(174, 81, 81);
+}
+#box2{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.b1{
+    width: 30px;
+    height: 30px;
+    border: 2px soild rgb(129, 58, 58);
+}
+#body{
+   height: 700px ;
+   width: 1480px;   
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ border-radius: 10px;
+   padding:10px;
+   background-image: url(https://img.freepik.com/premium-photo/red-background-with-variety-food-including-burgers-fries-ketchup_916191-843.jpg);
+   margin: 0%;
+   background-size:cover;
+   background-repeat:no-repeat ;
+   background-position: center;
+   gap: 20px;
+   
+   
+
+}
+.loki1{
+    color: white;
+    font-size: 50PX;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    align-items: center;
+    background-position: cover;
+}
+.loki2{
+    font-size: 30PX;
+    color: white; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    align-items: center;
+    background-position: center;
+}
+.loki3{
+    width: 120px;
+    height: 50px;
+    font-weight: bold;
+    border-radius: 50px;
+    background-color: rgb(99, 172, 99);
+    color: white;
+    border: none;
+    font-size: 15px;
+    
+
+}
+.loki3:active{
+    background-color: rgb(75, 5, 50);
+    color: white;
+
+}
+.loki3:hover{
+    box-shadow: 0 10px 3px rgba(0,0,0,0.15);
+                 transform: scale(1.10);
+                 transition: all 0.3s ease;
+}
+
+.img-box{
+   width: 270px;
+   height: 200px;
+   background-image: url(https://www.whiskaffair.com/wp-content/uploads/2021/05/Gochujang-Noodles-2-3.jpg);
+   background-position: center;
+   background-size: cover;
+   border-radius: 10px;
+   background-repeat: no-repeat;
+   align-items: center;
+}
+.img-box2{
+  width: 270px;
+  height: 200px;
+  background-image: url(https://img.freepik.com/premium-photo/food-images-any-restaurant_729149-108169.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px;
+}
+.img-box3{
+    width: 270px;
+    height: 200px;
+    background-image: url(https://cravinghomecooked.com/wp-content/uploads/2019/08/crispy-fried-chicken-1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+
+}
+.img-box4{
+    width: 270px;
+    height: 200px;
+    background-image: url(https://img.freepik.com/premium-photo/indian-hindu-veg-thali-also-known-as-food-platter-is-complete-lunch-dinner-meal-closeup-selective-focus_466689-9137.jpg?w=2000);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+.img-box5{
+    width: 270px;
+    height: 200px;
+    background-image: url(https://www.daringgourmet.com/wp-content/uploads/2023/06/Dosa-Recipe-3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+.img-box6{
+    width: 270px;
+    height: 200px;
+    background-image: url(https://img.onmanorama.com/content/dam/mm/en/food/foodie/images/2019/10/1/idli.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+.img-box7{
+    width: 270px;
+    height: 200px;
+    background-image: url(https://www.whiskaffair.com/wp-content/uploads/2020/04/Kerala-Parotta-1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+.img-box8{
+    width: 270px;
+    height: 200px;
+    background-image: url(https://images4.alphacoders.com/644/644372.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+.menu{
+    height: 40px;
+    padding-left: 50px;
+    
+}
+.krishna{
+    width: 1500px;
+    height: 350px;
+    display: flex;
+    margin: 0%;
+
+}
+#food3{
+    width: 250px;
+    height: 200px;
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    margin: 60px;
+    top: 10px;
+    left: 20px;
+    padding-left: 100px;
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    justify-content: space-between;
+    background-size: cover;
+}
+
+.service1:hover{
+      box-shadow: 0 10px 3px rgba(0,0,0,0.15);transform: scale(1.1);
+      transition: all 0.3s ease;
+
+}
+.krishna2{
+    padding-left: 20px;
+    height: 40px;
+    
+    
+}
+#why{
+    padding-left: 20px;
+}
+
+.service1{
+    width: 10px;
+    height: 10px;
+    padding: 0%;
+    margin: 0%;
+    background-image: url(https://img.freepik.com/premium-vector/food-service-logo-design-template_145155-3368.jpg?w=2000);
+    background-position: center;
+    background-size: contain;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    display: inline-block;
+
+}
+ .foodservice1{
+    padding-left: 25px;
+    padding-top: 220px;
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+ }
+
+.service2{
+     width: 10px;
+    height: 10px;
+    padding: 0%;
+    margin: 0%;
+    background-image: url(https://img.freepik.com/premium-vector/fresh-food-logo-design-template_145155-3776.jpg);
+    background-position: center;
+    background-size: contain;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+.service2:hover {
+      box-shadow: 0 10px 3px rgba(0,0,0,0.15);
+      transform: scale(1.1);
+        transition: all 0.3s ease;
+}
+.service3{
+     width: 10px;
+    height: 10px;
+    padding: 0%;
+    margin: 0%;
+    background-image: url(https://cdn3.vectorstock.com/i/1000x1000/19/97/hanging-best-offer-label-vector-28911997.jpg);
+    background-position: center;
+    background-size: contain;
+    border-radius: 10px;
+    border-radius: 50px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+.service3:hover{
+      box-shadow: 0 10px 3px rgba(0,0,0,0.15);transform: scale(1.1);
+      transition: all 0.3s ease;
+}
+.foodservice2{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    padding-top: 220px;
+    padding-left: 40px;
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.foodservice3{
+     width: 100px;
+    height: 100px;
+    display: flex;
+    padding-top: 220px;
+    padding-left: 40px;
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+#go{
+      width: 100px;
+    height: 100px;
+    display: flex;
+    padding-top: 220px;
+    padding-right: 250px;
+    margin: auto;
+}
+#giftbox{
+    width: 1500px;
+    height: 300px;
+    margin: auto;
+    padding-top: 20px;
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 40px;
+
+}
+.gift-item1{
+    width: 300px;
+    height: 270px;
+    padding-left: 40pxpx;
+    
+    
+}
+#giftbox1{
+    padding-left: 20px;
+    margin-left: 70px;
+    background-image: url(https://images.unsplash.com/photo-1539735257177-0d3949225f96?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGxhdGUlMjBvZiUyMGZvb2R8ZW58MHx8MHx8&w=1000&q=80);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+}
+#giftbox2{
+    width: 600px;
+    
+}
+.video{
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(122, 177, 21);
+    width:100px;
+    height:40px
+    
+
+}
+#discount{
+    width: 1450px;
+    height: 300px;
+    display: flex;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    
+}
+.discount1{
+    width: 300px;
+    height: 250px;
+    margin: auto;
+    margin-right: 310px;
+    padding-right: 300px;
+    margin-left: 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.discount2{
+    width: 300px;
+    height: 250px;
+    margin: auto;
+    background-image: url(https://static.vecteezy.com/system/resources/previews/002/196/879/large_2x/up-to-20-percent-off-big-sale-discount-design-free-vector.jpg);
+    background-position: center;
+    background-size: contain;
+    border-radius: 50px;
+}
+.discount2:hover{
+     box-shadow: 0 10px 3px rgba(0,0,0,0.15);
+     transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+.oder1{
+    background-color: rgb(10, 116, 10);
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    color: white;
+}
+#nowgift{
+    width: 1440px;
+    height: 300px;
+    margin-left: 20px;
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+}
+.nowgift1{
+    border-radius: 2px soild black;
+    width: 600px;
+    height: 150px;
+    margin-left: 30px;
+    margin-bottom: 140px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.nowgift2{
+    width: 300px;
+    height: 270px;
+    background-image: url(https://i.pinimg.com/736x/42/fd/46/42fd4641847b9952db0b5ab1d627c75d--gift-guide-families.jpg);
+    margin-left: 100px;
+    padding-left: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.redeem{
+    color: white;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    background-color: rgb(46, 152, 34);
+}
+#prelast{
+    width: 1500px;
+    height: 200px;
+    background-color: rgb(112, 195, 132);
+    display: flex;
+
+}
+.prelast1{
+    width: 300px;
+    height: 150px;
+    margin: auto;
+    row-gap: 20px;
+    align-items: center;
+    text-align: center;
+
+  
+}
+
+
+
+#icon:hover{
+     box-shadow: 0 10px 3px rgba(0,0,0,0.15);
+     transform: scale(1.1);
+     transition: all 0.3s ease;
+
+}
+#icon2{
+    font-size: 30px;
+}
+.low{
+    width: 1500;
+    height: 200px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+#low2{
+   width: 150px;
+   height: 150px;
+   background-image: url(https://png.pngtree.com/png-clipart/20230321/original/pngtree-food-business-logo-png-image_8998844.png);
+   background-position: center;
+   background-size: contain;
+}
+#low2:hover{
+     box-shadow: 0 10px 3px rgba(0,0,0,0.15);transform: scale(1.1);
+     transition: all 0.3s ease;
+}
+
+.lowlevel{
+    background-color: aquamarine;
+    width: 100px;
+    height: 100px;
+}
+
+.blue{
+    width: 400px;
+    height: 40px;
+    border-radius: 30px;
+    border: none;
+}
+.blue:hover{
+     box-shadow: 0 10px 3px rgba(0,0,0,0.15);
+     transform: scale(1.1);
+     transition: all 0.3s ease;
+}

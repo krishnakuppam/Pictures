@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Glowing Button</title>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .glow-button {
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(45deg, #ff0080, #7928ca);
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #ff0080;
+    }
+
+    .glow-button::before {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      background: linear-gradient(45deg, #ff0080, #ff8c00, #40e0d0, #8a2be2, #ff0080);
+      z-index: -1;
+      border-radius: 35px;
+      filter: blur(10px);
+      opacity: 0;
+      transition: 0.3s ease;
+    }
+
+    .glow-button:hover::before {
+      opacity: 1;
+      animation: glowColors 4s linear infinite;
+    }
+
+    @keyframes glowColors {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .glow-button::before {
+      background-size: 300% 300%;
+    } 
+  </style>
+</head>
+<body>
+
+  <button class="glow-button">Glowing Button</button>
+
+</body>
+</html>
