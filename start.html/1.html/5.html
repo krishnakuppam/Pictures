@@ -1,0 +1,51 @@
+<a href="mailto:erk004@ucsd.edu" class="email-link">erk004@ucsd.edu</a>
+<style>
+    .email-link {
+  text-decoration: none;
+  color: black;
+  font-size: 28px;
+  font-family: 'Georgia', serif;
+  border-bottom: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+.email-link:hover {
+  border-bottom: 2px solid black; /* The underline appears smoothly */
+}
+.email-link {
+  text-decoration: none;
+  color: black;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}
+.email-link {
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+.email-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+
+.email-link:hover::after {
+  width: 100%;
+}
+.email-link {
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+
+
+</style>
