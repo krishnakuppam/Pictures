@@ -1,51 +1,54 @@
-<a href="mailto:erk004@ucsd.edu" class="email-link">erk004@ucsd.edu</a>
-<style>
-    .email-link {
-  text-decoration: none;
-  color: black;
-  font-size: 28px;
-  font-family: 'Georgia', serif;
-  border-bottom: 2px solid transparent;
-  transition: border 0.3s ease;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #work {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+            font-size: 16px;
+            justify-content: center;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+
+        }
+        a:hover {
+            text-decoration: underline;
+            text-underline-offset: 5px;
+  
+}
+        a:active {
+            background-color: #f0f0f0;
+            color: #333;
+
+        }
+        a:visited {
+            color: purple;
+        }
+        a:hover {
+  text-decoration: underline overline;
 }
 
-.email-link:hover {
-  border-bottom: 2px solid black; /* The underline appears smoothly */
-}
-.email-link {
-  text-decoration: none;
-  color: black;
-}
-
-.email-link:hover {
-  text-decoration: underline;
-}
-.email-link {
-  position: relative;
-  text-decoration: none;
-  color: black;
-}
-
-.email-link::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -3px;
-  left: 0;
-  background-color: black;
-  transition: width 0.3s ease;
-}
-
-.email-link:hover::after {
-  width: 100%;
-}
-.email-link {
-  position: relative;
-  text-decoration: none;
-  color: black;
-}
-
-
-
-</style>
+    </style>
+</head>
+<body>
+    <div id="work"><a href="">Work</a></div>
+    
+    
+</body>
+</html>

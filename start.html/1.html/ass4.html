@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background: linear-gradient( 90deg, #7ba2b3, #6d98a7);
+            
+        }
+        #navbar {
+            background-color: #b4d8e1;
+            width: 30%;
+            height: 50px;
+            display: flex;
+            border-radius: 0 0 10px 10px ;
+            position:fixed;
+            justify-content: space-between;
+            justify-content: center;
+            margin: auto;
+            gap: 5rem;
+            align-items: center;
+            top: 0%;
+            cursor: pointer;
+            left: 500px;
+
+            
+        }
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+            position: fixed;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            padding: 0;
+
+
+        }
+        .list:hover::after{
+            content: "work";
+
+        }
+        .list:hover{
+          
+           transform: scale(1.10);
+         
+        }
+     .list1{
+     position: absolute;
+      top: 110%; /* Below the icon */
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #000;
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+
+     }
+      #navbar:hover .list1 {
+      opacity: 1;
+    }
+
+    
+    #nvb{
+        
+        background-color: #ffffff;
+        width: 1470px;
+        height: 90vh;
+        border-radius: 10px ;
+        margin: auto;
+        margin-top: 30px;
+
+    }
+    .list2{
+        position: absolute;
+         position: absolute;
+      top: 110%; /* Below the icon */
+      left: 100%;
+      transform: translateX(-50%);
+      background-color: #000;
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+    #navbar:hover .list2 {
+      opacity: 1;
+    }
+    .b{
+      display: flex;
+      justify-content: space-between;
+      
+    
+    
+
+   }
+
+        
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div id="navbar">
+            <div class="nav-list">
+                
+                <ul class="list1">About work</ul>
+                <a class="a" href="https://www.wallofportfolios.in/portfolios/jahanvi-singh">  <img  width="35" height="35" src="https://img.icons8.com/material-rounded/24/person-female.png" alt="person-female"/> </a>
+                
+               <a class="b"> <img  width="35" height="35" src="https://img.icons8.com/pastel-glyph/64/new-post--v2.png" alt="new-post--v2"/> </a>
+               <div class="list2">Email</div>
+              <a class=""><img  width="35" height="35" src="https://img.icons8.com/fluency-systems-filled/48/hard-working.png" alt="hard-working"/></a>
+                <img  width="35" height="35" src="https://img.icons8.com/pastel-glyph/64/briefcase--v2.png" alt="briefcase--v2"/>
+                <img  width="35" height="35" src="https://img.icons8.com/ios-filled/50/linkedin.png" alt="linkedin"/>
+            </div>
+
+
+        </div>
+
+         <div id="nvb">
+              
+         </div>
+    </nav>
+    
+</body>
+</html>
