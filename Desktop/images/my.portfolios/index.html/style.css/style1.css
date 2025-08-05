@@ -1,0 +1,182 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    background-image: url(../../krishna.png);
+}
+
+.navbar {
+    width: 1300px;
+    height: 80px;
+    margin: 10px auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding: 0 40px;
+    background: transparent;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+    margin-top: 55px;
+
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links {
+
+    display: flex;
+    list-style: none;
+    margin: 10px 150px 0 0;
+    padding: 0;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+.nav-item {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav-item:hover {
+    background-color: rgba(255,255,255,0.2);
+    color: #000;
+}
+
+.hover-underline-animation,
+.hover-underline-animation1,
+.hover-underline-animation2,
+.hover-underline-animation0 {
+    position: relative;
+    color: #000;
+    padding-bottom: 10px; 
+}
+
+.hover-underline-animation:after,
+.hover-underline-animation1:after,
+.hover-underline-animation2:after,
+.hover-underline-animation0:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after,
+.hover-underline-animation1:hover:after,
+.hover-underline-animation2:hover:after,
+.hover-underline-animation0:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+.new {
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.new span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    padding-right: 15px;
+    text-transform: uppercase;
+}
+
+.new svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+}
+
+.new:hover svg {
+    transform: translateX(0);
+}
+
+.new:active svg {
+    transform: scale(0.9);
+}
+
+.cta {
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+.cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    padding-right: 15px;
+    text-transform: uppercase;
+}
+
+.cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+    transform: translateX(0);
+}
+
+.cta:active svg {
+    transform: scale(0.9);
+}
+
+.button-label {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    padding-right: 15px;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+}
+@media (max-width: 1400px) {
+    .navbar {
+        width: 100%;
+        padding: 0 10px;
+    }
+    .nav-links {
+        margin-right: 20px;
+    }
+}

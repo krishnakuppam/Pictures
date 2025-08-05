@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(90deg, #ffffff, #ffffff);
+    }
+
+    #navbar {
+      background-color: #fff;
+      width: 27%;
+      height: 50px;
+      margin: auto;
+      display: flex;
+      border-radius: 0 0 10px 10px;
+      position: fixed;
+      justify-content: center;
+      gap: 3rem;
+      align-items: center;
+      top: 1%;
+      left: 35%;
+      z-index: 1;
+      cursor: pointer;
+    }
+
+    .nav-item {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nav-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .tooltip {
+      position: absolute;
+      top: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ffffff;
+      color: #080808;
+      font-weight: bold;
+      padding: 6px 8px;
+      border-radius: 6px;
+      font-size: 15px;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .nav-item:hover .tooltip {
+      opacity: 1;
+    }
+
+    #nvb {
+      background-color: #080808;
+      width: 95%;
+      height: 96vh;
+      border-radius: 10px;
+      margin: auto;
+      margin-top: 80px;
+      box-shadow: 0px 10px 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .nac, .nac1 {
+      width: 400px;
+      height: 200px;
+      border-radius: 15px;
+      border: 1px solid rgb(74, 73, 73);
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: transform 0.9s ease, box-shadow 0.3s ease;
+    }
+
+    .nac:hover {
+      background: linear-gradient(#5450a4, #657439, #aa7979);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(110, 109, 109, 0.674);
+    }
+
+    .nac1:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(128, 126, 126, 0.74);
+    }
+
+    h1 {
+      color: #fff;
+      font-size: 1rem;
+    }
+
+    .h2 {
+      color: azure;
+    }
+
+    .holder {
+      width: 1280px;
+      max-width: 100%;
+      height: auto;
+      background-color: #080808;
+      border-radius: 10px;
+      padding: 5rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 15px;
+    }
+
+    .button {
+      background-color: #494c49;
+      color: #fff;
+      width: 100px;
+      height: 40px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .h {
+      width: 80%;
+      max-width: 300px;
+      height: 40px;
+      padding: 5px;
+    }
+
+    @media screen and (max-width: 915px) {
+      body {
+        background-color: rgb(78, 78, 160);
+        height: 100vh;
+      }
+
+      #navbar {
+        width: 80%;
+        justify-content: flex-start;
+        left: 10%;
+      }
+
+      #nvb {
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .nac, .nac1 {
+        width: 90%;
+      }
+
+      .nav-item {
+        margin: auto;
+        align-items: flex-start;
+      }
+
+      .holder {
+        width: 95%;
+        padding: 2rem;
+      }
+    }
+
+    @media screen and (max-width: 1366px) {
+      .holder {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div id="navbar">
+      <div class="nav-item">
+        <a href="#about" aria-label="About">
+          <img width="35" height="35" src="https://img.icons8.com/material-rounded/24/person-female.png" alt="About"/>
+        </a>
+        <div class="tooltip">About</div>
+      </div>
+
+      <div class="nav-item">
+        <a href="#email" aria-label="Email">
+          <img width="35" height="35" src="https://img.icons8.com/pastel-glyph/64/new-post--v2.png" alt="Email"/>
+        </a>
+        <div class="tooltip">Email</div>
+      </div>
+
+      <div class="nav-item">
+        <a href="#work" aria-label="Work">
+          <img width="35" height="35" src="https://img.icons8.com/fluency-systems-filled/48/hard-working.png" alt="Work"/>
+        </a>
+        <div class="tooltip">Work</div>
+      </div>
+
+      <div class="nav-item">
+        <a href="#experience" aria-label="Experience">
+          <img width="35" height="35" src="https://img.icons8.com/pastel-glyph/64/briefcase--v2.png" alt="Experience"/>
+        </a>
+        <div class="tooltip">Experience</div>
+      </div>
+
+      <div class="nav-item">
+        <a href="#linkedin" aria-label="LinkedIn">
+          <img width="35" height="35" src="https://img.icons8.com/ios-filled/50/linkedin.png" alt="LinkedIn"/>
+        </a>
+        <div class="tooltip">LinkedIn</div>
+      </div>
+    </div>
+  </nav>
+
+  <div id="nvb">
+    <div class="nac">
+      <h1>Education Space</h1>
+      <h2 style="color: #fff;">Hello, I'm Krishna. Currently I'm doing UG 4th year.</h2>
+    </div>
+    <div class="nac1">
+        <h1>Project Section</h1>
+    </div>
+  </div>
+
+  <br><br>
+
+  <div class="holder">
+    <h2 style="color: #fff;">Contact</h2>
+    <input class="h" type="text" placeholder="Name">
+    <input class="h" type="email" placeholder="Email">
+    <input class="h" type="text" placeholder="Message">
+    <button class="button" type="submit">Send</button>
+  </div>
+
+</body>
+</html>

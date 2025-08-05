@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Glassy Navbar with JS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: white;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .navbar {
+      margin: 30px auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      padding: 10px 30px;
+      width: fit-content;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 40px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      position: relative;
+      padding: 6px 12px;
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+      color: #00ffff;
+    }
+
+    .icon {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      cursor: pointer;
+    }
+
+    .icon:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .light-mode {
+      background: #f2f2f2;
+      color: #000;
+    }
+
+    .light-mode .navbar {
+      background: rgba(0, 0, 0, 0.05);
+      border-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .light-mode .navbar a {
+      color: black;
+    }
+
+    .light-mode .navbar a.active {
+      color: #0077ff;
+    }
+
+    .light-mode .icon {
+      background: rgba(187, 174, 174, 0.689);
+      color: black;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="icon" id="homeBtn" title="Home"><i class="fas fa-broadcast-tower"></i></div>
+    <a href="#work" class="nav-link">Work</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#play" class="nav-link">Play</a>
+    <div class="icon" id="themeToggle" title="Toggle Theme"><i class="far fa-circle"></i></div>
+  </div>
+
+  <h1 id="mainHeading">William Le</h1>
+
+  <script>
+    // Highlight active nav link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+        alert("You clicked: " + this.textContent); // for demo
+      });
+    });
+
+    // Home button click
+    document.getElementById('homeBtn').addEventListener('click', () => {
+      alert("Going Home (You can scroll or redirect)");
+    });
+
+    // Theme toggle
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+    });
+  </script>
+
+</body>
+</html>

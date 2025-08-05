@@ -115,7 +115,7 @@
       color: azure;
 
     }
-    @media screen and (max-width: 726px)  {
+    @media screen and (max-width: 915px)  {
       body{
       background-color: rgb(78, 78, 160);
       height: 100vh;
@@ -123,16 +123,30 @@
       }
 
         #navbar {
-          top: 10px;
-          width: 450px;
-          height: 50px;
-          margin: auto;
-          justify-items: center;
-          align-items: center;
-          display: flex;
-          right: 100px;
-          margin-right: 40px;
+      background-color: #fff;
+      width: 27%;
+      height: 50px;
+      margin: auto;
+      display: flex;
+      border-radius: 0 0 10px 10px;
+      position: fixed;
+      justify-content: start;
+      gap: 3rem;
+      align-items: center;
+      top: 1%;
+      right: 300px;
+      z-index: 1;
+      cursor: pointer;
         
+        }
+        
+        .nav-item{
+        margin: 0 10px;
+       position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+
         }
         #nvb{
           display: flex;
@@ -142,21 +156,34 @@
           gap: 30px;
         }
         .nac{
-          width: 500px;
+          width: 400px;
 
           
         }
         .nac1{
-          width: 500px;
+          width: 400px;
         }
         .nav-item{
           margin: auto;
           
         }
+        .holder{
+          width: 100vw;
+          height:50px ;
+          margin: auto;
+          display: flex;
+          flex-direction: row
+        }
       
     }
-    @media screen and (max-width: 1024px ) {
-      
+    @media screen and (max-width:1366) {
+      .holder{
+        width: 50vh;
+        height: 1px;
+        margin: auto;
+
+      }
+
     }
     .holder{
       width: 1280px;
@@ -169,19 +196,23 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      row-gap: 10px;
+      row-gap: 15px;
+
       
     }
-    .hold{
-      gap: 20px;
-      padding: 2rem;
-      width: 10rem;
-      height: 200px;
-      margin: 0%;
-      flex-direction: column;
-
-    }
     
+    .button{
+      background-color: #494c49;
+      color: #fff;
+      width: 100px;
+      height: 100px;
+      border-radius: 5px;
+    }
+    .h{
+      width: 200px;
+      height: 100px;
+      
+    }
 
   </style>
 </head>
@@ -230,7 +261,7 @@
         <h1>Education Space</h1>
         <h2 style="color: #fff;">Hello im Krishna currently im doing ug 4th year</h2>
     </div>
-    
+    <div>
     <div class="nac1"></div>
     <div></div>
   </div>
@@ -239,11 +270,11 @@
   <br>
   
   <div class="holder">
-    <h2 style="width: 2rem;"> contact</h2>
-    <input style="width: 300px; height: 30px; border-radius: 5px;" type="text" placeholder="Name">
-    <input style="width: 300px; height: 30px; border-radius: 5px;" type="Email" placeholder="Email">
-    <input style="width: 300px; height: 30px; border-radius: 5px;"  type="message" placeholder="Message">
-    <button style="width: 3rem ;" >Send</button>
+    <h2  style="width: 2rem; color: #fff; padding-right:90px;"> Contact</h2>
+    <input class="h" type="text" placeholder="Name">
+    <input class="h" type="Email" placeholder="Email">
+    <input class="h" type="message" placeholder="Message">
+    <button class="button">Send</button>
 
   </div>
 
