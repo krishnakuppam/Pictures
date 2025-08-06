@@ -7,26 +7,63 @@
 </head>
 <body>
 
-    <input type="text" id="input" placeholder="Enter a task">
-    <button id="add-btn" onclick="addtodo()">Add Task</button>
-    <div class="here"></div>
+    <input type="number" id="sub1" placeholder="sub">
+    <input type="number" id="sub2" placeholder="sub">
+    <input type="number" id="sub3" placeholder="sub">
+    <input type="number" id="sub4" placeholder="sub">
+    <input type="number" id="sub5" placeholder="sub">
+       
 
 
+    <button id="btn"  onclick="cal()">Calculate</button>
+
+    <div id="result"></div>
 
     <script>
-  
+      
+      function cal(){
 
-  function addtodo() {
-    const krishna = document.querySelector("input").value;
-    console.log(krishna);
-    const newtodo = document.createElement("here");
-    newtodo.innerHTML = krishna;
-    document.querySelector(".here").appendChild(newtodo);
-    
+        const krishna1 = document.getElementById("sub1").value;
+        const krishna2 = document.getElementById("sub2").value;
+        const krishna3 = document.getElementById("sub3").value;
+        const krishna4 = document.getElementById("sub4").value;
+        const krishna5 = document.getElementById("sub5").value;
 
-}
+        const krishna = parseInt(krishna1) + parseInt(krishna2) + parseInt(krishna3) + parseInt(krishna4) + parseInt(krishna5);
+        const avarage = krishna / 5;
+
+        const result = document.getElementById("result");
+
+        let grade = "";
+       if (avarage >= 90) {
+        grade = "A+";
+       }
+        else if (avarage >=80) {
+            grade = "A";
+        }
+        else if (avarage >= 70) {
+            grade = "B";
+        }
+        else if (avarage >= 60) {
+            grade = "C";
+        }
+        else if (avarage >= 50) {
+            grade = "D";
+        }
+        else {
+            grade = "F";
+        }
+        result.innerHTML = `Total Marks: ${krishna} <br> Average: ${avarage} <br> Grade: ${grade}`;
+
+      }
+
+
+
+
 
     </script>
-    
+        
+     
+   
 </body>
 </html>
