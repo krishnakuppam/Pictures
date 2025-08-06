@@ -30,7 +30,7 @@
 
 //     }
 
-function krishna(a-b) {
+function krishna(_a-b) {
     console.log(`Hello ${a} ${b}`);
 
 
