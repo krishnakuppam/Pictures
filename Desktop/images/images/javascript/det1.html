@@ -74,47 +74,43 @@
 
     <script>
       
-      function cal(){
+   function cal() {
 
-        const krishna1 = document.getElementById("sub1").value;
-        const krishna2 = document.getElementById("sub2").value;
-        const krishna3 = document.getElementById("sub3").value;
-        const krishna4 = document.getElementById("sub4").value;
-        const krishna5 = document.getElementById("sub5").value;
+    const krishna1 = parseFloat(document.getElementById("sub1").value);
+    const krishna2 = parseFloat(document.getElementById("sub1").value);
+    const krishna3 = parseFloat(document.getElementById("sub1").value);
+    const krishna4 = parseFloat(document.getElementById("sub1").value);
+    const krishna5 = parseFloat(document.getElementById("sub1").value);
+   
 
-        const krishna = parseInt(krishna1) + parseInt(krishna2) + parseInt(krishna3) + parseInt(krishna4) + parseInt(krishna5);
-        const avarage = krishna / 5;
+    const total = krishna1 + krishna2 + krishna3 + krishna4 + krishna5;
+    const average = total / 5;
+    const resultDiv = document.getElementById("result");
 
-        const result = document.getElementById("result");
+    let grade = "";
 
-        let grade = "";
-       if (avarage >= 90) {
+    if (average >=90) {
         grade = "A+";
-       }
-        else if (avarage >=80) {
-            grade = "A";
-        }
-        else if (avarage >= 70) {
-            grade = "B";
-        }
-        else if (avarage >= 60) {
-            grade = "C";
-        }
-        else if (avarage >= 50) {
-            grade = "D";
-        }
-        else {
-            grade = "F";
-        }
-        result.innerHTML = `Total Marks: ${krishna} <br> Average: ${avarage} <br> Grade: ${grade}`;
+    } else if (average >= 80) {
+        grade = "A";
+    } else if (average >= 70) {
+        grade = "B";
+    } else if (average >= 60) {
+        grade = "C";
+    } else if (average >= 50) {
+        grade = "D";
+    } else {
+        grade = "F";
+    } 
 
-      }
+    resultDiv.innerHTML =`total: ${total} <br> avarage: ${average} <br> grade: ${grade}`;
+}
 
 
 
 
 
-    </script>
+ </script>
         
      
    

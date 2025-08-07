@@ -30,12 +30,12 @@
 
 //     }
 
-function krishna(_a-b) {
-    console.log(`Hello ${a} ${b}`);
+// function krishna(a-b) {
+//     console.log(`Hello ${a} ${b}`);
 
 
-}
-krishna(" ");
+// }
+// krishna(" ");
   
 
 

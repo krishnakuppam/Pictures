@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="num1" placeholder="Enter first number">
+
+    <button id="on"  onclick="todo()">click</button>
+
+    <div id="result"></div> 
+
+
+    <script>
+        function todo(){
+            let krishna = document.querySelector("#num1").value;
+            let result1 = document.querySelector("#result");
+            console.log(krishna);
+            
+          
+            if (krishna === ""){
+                alert("Please enter your task");
+            }
+            
+                   
+     
+            result1.innerHTML = "complet this task:" + krishna;
+
+
+        
+                
+
+
+        }
+    </script>
+    
+</body>
+</html>
