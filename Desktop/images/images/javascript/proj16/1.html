@@ -1,41 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Form Validation</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #f4f4f4;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+    form {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+      width: 300px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #5cb85c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #4cae4c;
+    }
+  </style>
 </head>
 <body>
 
-    <input type="text" id="num1" placeholder="Enter first number">
+  <form id="myForm">
+    <h2>Register</h2>
 
-    <button id="on"  onclick="todo()">click</button>
+    <label for="name">Name</label>
+    <input type="text" id="name" />
+    <div class="error" id="nameError"></div>
 
-    <div id="result"></div> 
+    <label for="email">Email</label>
+    <input type="text" id="email" />
+    <div class="error" id="emailError"></div>
 
+    <label for="password">Password</label>
+    <input type="password" id="password" />
+    <div class="error" id="passwordError"></div>
 
-    <script>
-        function todo(){
-            let krishna = document.querySelector("#num1").value;
-            let result1 = document.querySelector("#result");
-            console.log(krishna);
-            
-          
-            if (krishna === ""){
-                alert("Please enter your task");
-            }
-            
-                   
-     
-            result1.innerHTML = "complet this task:" + krishna;
+    <button type="submit">Submit</button>
+  </form>
 
+  <script>
+    const form = document.getElementById("myForm");
 
-        
-                
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
+      // Clear previous errors
+      document.getElementById("nameError").textContent = "";
+      document.getElementById("emailError").textContent = "";
+      document.getElementById("passwordError").textContent = "";
 
-        }
-    </script>
-    
+      // Get input values
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      let isValid = true;
+
+      // Name Validation
+      if (name === "") {
+        document.getElementById("nameError").textContent = "Name is required";
+        isValid = false;
+      }
+
+      // Email Validation
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (email === "") {
+        document.getElementById("emailError").textContent = "Email is required";
+        isValid = false;
+      } else if (!emailPattern.test(email)) {
+        document.getElementById("emailError").textContent = "Invalid email format";
+        isValid = false;
+      }
+
+      // Password Validation
+      if (password.length < 6) {
+        document.getElementById("passwordError").textContent = "Password must be at least 6 characters";
+        isValid = false;
+      }
+
+      // If valid
+      if (isValid) {
+        alert("Form submitted successfully!");
+        form.reset();
+      }
+    });
+  </script>
 </body>
 </html>

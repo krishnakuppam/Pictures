@@ -11,6 +11,15 @@
             background-color: #f4f4f4;
             padding: 20px;
         }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
         input[type="number"] {
             margin: 5px;
             padding: 10px;
@@ -58,8 +67,8 @@
             }
     </style>
 </head>
-<body>
-
+<div>
+        <div class="container">
     <input type="number" id="sub1" placeholder="sub">
     <input type="number" id="sub2" placeholder="sub">
     <input type="number" id="sub3" placeholder="sub">
@@ -71,6 +80,8 @@
     <button id="btn"  onclick="cal()">Calculate</button>
 
     <div id="result"></div>
+
+    </div>
 
     <script>
       
@@ -102,7 +113,7 @@
     } else {
         grade = "F";
     } 
-
+        
     resultDiv.innerHTML =`total: ${total} <br> avarage: ${average} <br> grade: ${grade}`;
 }
 
