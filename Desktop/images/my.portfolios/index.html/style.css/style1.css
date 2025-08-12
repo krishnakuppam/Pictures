@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #fff;
+    
     font-family: Arial, sans-serif;
     background-image: url(../../krishna.png);
 }
@@ -44,7 +44,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 500px;
-    height: 70px;
+    height: 60px;
     background: rgba(255, 255, 255, 0.2); 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -115,7 +115,7 @@ body {
 .new span {
     padding-bottom: 7px;
     letter-spacing: 4px;
-    font-size: 14px;
+    font-size: 10px;
     padding-right: 15px;
     text-transform: uppercase;
 }
@@ -145,7 +145,7 @@ body {
 .cta span {
     padding-bottom: 7px;
     letter-spacing: 4px;
-    font-size: 14px;
+    font-size: 10px;
     padding-right: 15px;
     text-transform: uppercase;
 }
@@ -166,7 +166,7 @@ body {
 .button-label {
     padding-bottom: 7px;
     letter-spacing: 4px;
-    font-size: 14px;
+    font-size: 10px;
     padding-right: 15px;
     text-transform: uppercase;
     font-family: Arial, sans-serif;

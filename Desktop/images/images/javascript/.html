@@ -46,7 +46,7 @@
       const taskValue = document.getElementById("display").value;
       
 
-      const taskDiv = document.createElement("div");
+      const taskDiv = document.createElement("divo");
       taskDiv.classList.add("task");
 
       const taskText = document.createElement("span");
@@ -54,9 +54,9 @@
 
       const removeBtn = document.createElement("button");
       removeBtn.textContent = "Remove";
-      removeBtn.onclick = function () {
+      removeBtn.onclick = function () { 
         taskDiv.remove();
-      };
+      }; 
 
       taskDiv.appendChild(taskText);
       taskDiv.appendChild(removeBtn);

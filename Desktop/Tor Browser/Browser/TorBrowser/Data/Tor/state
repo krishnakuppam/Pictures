@@ -1,4 +1,4 @@
-# Tor state file last generated on 2025-07-13 23:24:48 local time
+# Tor state file last generated on 2025-08-12 20:02:18 local time
 # Other times below are in UTC
 # You *do not* need to edit this file.
 
@@ -107,6 +107,6 @@ Guard in=default rsa_id=58F3A320CD73CFE23398B4FAA213E8BA3779C5E7 nickname=NovumC
 Guard in=default rsa_id=D7B3558020235C1F374EEC8BDE1468E195411E3A nickname=Platypus sampled_on=2025-05-16T02:45:59 sampled_idx=17 sampled_by=0.4.8.16 listed=1
 Guard in=default rsa_id=D281CCB4BEF52391DCD7E90E73B32E324043A944 nickname=ZynR02 sampled_on=2025-05-16T07:42:01 sampled_idx=18 sampled_by=0.4.8.16 listed=1
 Guard in=default rsa_id=A8E0BBA351D0A1159BED88CCD405D5AA4DF4EAF7 nickname=BeetleFun sampled_on=2025-05-25T22:33:36 sampled_idx=19 sampled_by=0.4.8.16 listed=1
-LastWritten 2025-07-13 17:54:48
+LastWritten 2025-08-12 14:32:18
 TorVersion Tor 0.4.8.16 (git-64ccafd8115ecdec)
 TotalBuildTimes 119
