@@ -2,114 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Form Validation</title>
-  <style>
-    body {
-      font-family: Arial;
-      background-color: #f4f4f4;
-      padding: 40px;
-      display: flex;
-      justify-content: center;
-    }
-    form {
-      background: white;
-      padding: 20px 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #ccc;
-      width: 300px;
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      margin-bottom: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    .error {
-      color: red;
-      font-size: 14px;
-    }
-    button {
-      width: 100%;
-      padding: 10px;
-      background-color: #5cb85c;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #4cae4c;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
+ 
+  <h1>Marks Calculation</h1>
 
-  <form id="myForm">
-    <h2>Register</h2>
+  <input type="number" id="sub1" placeholder="Enter marks for subject 1" required>
+  <input type="number" id="sub2" placeholder="Enter marks for subject 2" required>
+  <input type="number" id="sub3" placeholder="Enter marks for subject 2" required>
+  <input type="number" id="sub4" placeholder="Enter marks for subject 2" required>
+  <input type="number" id="sub5" placeholder="Enter marks for subject 2" required>
 
-    <label for="name">Name</label>
-    <input type="text" id="name" />
-    <div class="error" id="nameError"></div>
 
-    <label for="email">Email</label>
-    <input type="text" id="email" />
-    <div class="error" id="emailError"></div>
-
-    <label for="password">Password</label>
-    <input type="password" id="password" />
-    <div class="error" id="passwordError"></div>
-
-    <button type="submit">Submit</button>
-  </form>
+  <button id="submitButton"   onclick="input()">Submit</button>
+  <div id="output"></div>
+  
 
   <script>
-    const form = document.getElementById("myForm");
+      
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
+      function input() {
 
-      // Clear previous errors
-      document.getElementById("nameError").textContent = "";
-      document.getElementById("emailError").textContent = "";
-      document.getElementById("passwordError").textContent = "";
 
-      // Get input values
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const password = document.getElementById("password").value;
+        const krishna1 = document.getElementById("sub1").value;
+        const krishna2 = document.getElementById("sub2").value;
+        const krishna3 = document.getElementById("sub3").value;
+        const krishna4 = document.getElementById("sub4").value;
+        const krishna5 = document.getElementById("sub5").value;
 
-      let isValid = true;
+         
+        const outputDiv = document.getElementById("output");
 
-      // Name Validation
-      if (name === "") {
-        document.getElementById("nameError").textContent = "Name is required";
-        isValid = false;
+        const total = parseInt(krishna1) + parseInt(krishna2) + parseInt(krishna3) + parseInt(krishna4) + parseInt(krishna5);
+        const Avarage = total / 5;
+        const persentage = (total / 500) * 100;
+
+        let grade = "";
+          
+        
+
+        if (persentage >= 90) {
+          grade = "A+";
+        }
+        else if (persentage >= 80) {
+          grade = "A";
+        }
+        else if (persentage >= 70) {
+          grade = "B+";
+        }
+        else if (persentage >= 60) {
+          grade = "B";
+        }
+        else if (persentage >= 50) {
+          grade = "C";
+        }
+        else if (persentage >= 40) {
+          grade = "D";
+        }
+        else {
+          grade = "F";
+        }
+
+    
+
+        outputDiv.innerText =`"total marks:" ${total}
+        "average:" ${Avarage}
+        "persentage:" ${persentage}%
+        "grade:" ${grade}`;
+        
+
+
+
+
       }
-
-      // Email Validation
-      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-      if (email === "") {
-        document.getElementById("emailError").textContent = "Email is required";
-        isValid = false;
-      } else if (!emailPattern.test(email)) {
-        document.getElementById("emailError").textContent = "Invalid email format";
-        isValid = false;
-      }
-
-      // Password Validation
-      if (password.length < 6) {
-        document.getElementById("passwordError").textContent = "Password must be at least 6 characters";
-        isValid = false;
-      }
-
-      // If valid
-      if (isValid) {
-        alert("Form submitted successfully!");
-        form.reset();
-      }
-    });
   </script>
+
+  
 </body>
 </html>

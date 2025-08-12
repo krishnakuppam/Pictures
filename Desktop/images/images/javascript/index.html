@@ -9,7 +9,7 @@
           <h1>Add to list</h1>
   <input type="text" id="input" placeholder="Enter a task">
   
-  </select>
+  
   <button id="add-btn" onclick="addtodo()">Add Task</button>
 
   <div class="here">
@@ -21,21 +21,18 @@
     function addtodo(){
 
       var inputtask = document.querySelector("#input").value;
-      
-      console.log(inputtask,);
       var newtodo = document.createElement("div");
-      newtodo.innerHTML = inputtask + " " + priority1;
+      newtodo.innerHTML =inputtask + " ";
 
       document.querySelector(".here") .appendChild(newtodo);
-
+    
 
 
       if (inputtask=="") {
         alert("Please enter a task");
       }
  
-      var input = document.querySelector("#input");
-      input.value = "";
+    
       
       
     }

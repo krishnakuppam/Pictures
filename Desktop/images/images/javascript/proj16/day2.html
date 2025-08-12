@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="display" placeholder="Enter the to do">  
+
+    <button onclick="inputhere()">SU</button>
+
+    <input type="password" id = "krishna" placeholder="Enter your password">
+
+    <button id="eye">Eye</button>
+    
+
+    
+
+    <script>
+   
+   const krishna1 = document.getElementById("krishna");
+    const EYE = document.getElementById("eye");
+
+    
+    EYE.addEventListener("click", function(){
+        if (krishna1.type == "password"){
+            krishna1.type = "text";
+            EYE.innerText = "Hide";
+        }
+        else{
+            krishna1.type = "password";
+            EYE.innerText = "Show";
+        }
+
+    })
+
+
+    </script>
+
+
+
+
+</body>
+</html>
