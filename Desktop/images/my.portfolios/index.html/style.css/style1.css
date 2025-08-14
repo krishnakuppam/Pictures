@@ -630,14 +630,28 @@ body {
         box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
       }
 
-      .project-info {
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), transparent);
-        color: white;
-        padding: 20px;
-        text-align: center;
-        width: 100%;
-        backdrop-filter: blur(5px);
-      }
+             .project-info {
+         text-align: center;
+         padding: 10px;
+         width: 100%;
+       }
+
+       .case-study-btn {
+         background: linear-gradient(45deg, #667eea, #764ba2);
+         color: white;
+         border: none;
+         padding: 8px 16px;
+         border-radius: 20px;
+         font-size: 10px;
+         font-weight: bold;
+         cursor: pointer;
+         margin-bottom: 8px;
+         transition: transform 0.2s ease;
+       }
+
+       .case-study-btn:hover {
+         transform: scale(1.05);
+       }
 
       .project-title {
         font-size: 1.5rem;
