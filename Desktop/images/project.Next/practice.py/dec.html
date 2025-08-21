@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Validation with Warning Line</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f0;
+    }
+    .login-container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+    }
+    .input-group input.error-border {
+      border: 2px solid red;
+    }
+    .error {
+      color: red;
+      font-size: 13px;
+      margin-top: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 8px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <div class="input-group">
+      <input type="text" id="username" placeholder="Username">
+      <div class="error" id="userError"></div>
+    </div>
+    <div class="input-group">
+      <input type="password" id="password" placeholder="Password">
+      <div class="error" id="passError"></div>
+    </div>
+    <button onclick="validateLogin()">Login</button>
+  </div>
+
+  <script>
+    function validateLogin() {
+      let username = document.getElementById("username");
+      let password = document.getElementById("password");
+      let userError = document.getElementById("userError");
+      let passError = document.getElementById("passError");
+
+      // Clear old errors
+      userError.innerText = "";
+      passError.innerText = "";
+      
+
+      let valid = true;
+
+      if (username.value.trim() === "") {
+        userError.innerText = "Username is required";
+        username.classList.add("error-border");
+        valid = false;
+      }
+
+      if (password.value.trim() === "") {
+        passError.innerText = "Password is required";
+        password.classList.add("error-border");
+        valid = false;
+      } else if (password.value.length < 6) {
+        passError.innerText = "Password must be at least 6 characters";
+        password.classList.add("error-border");
+        valid = false;
+      }
+
+      if (valid) {
+        alert("Login Successful!");
+      }
+    }
+
+    // Remove red border when user starts typing
+    document.querySelectorAll("input").forEach(input => {
+      input.addEventListener("input", () => {
+        input.classList.remove("error-border");
+        if (input.nextElementSibling) {
+          input.nextElementSibling.innerText = "";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
