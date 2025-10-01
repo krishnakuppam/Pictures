@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Phone Book</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f4f4f4;
+    }
+    h2 { text-align: center; }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover { background: #0056b3; }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #e9ecef;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>📖 Simple Phone Book</h2>
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="text" id="phone" placeholder="Enter Phone Number">
+    <button onclick="addContact()">Add Contact</button>
+
+    <h3>Contacts:</h3>
+    <ul id="contactList"></ul>
+  </div>
+
+  <script>
+    let contacts = [];
+
+    function addContact() {
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+
+      if (name && phone) {
+        contacts.push({ name, phone });
+        displayContacts();
+        document.getElementById("name").value = "";
+        document.getElementById("phone").value = "";
+      } else {
+        alert("Please enter both name and phone number!");
+      }
+    }
+
+    function displayContacts() {
+      const list = document.getElementById("contactList");
+      list.innerHTML = "";
+      contacts.forEach((contact, index) => {
+        list.innerHTML += `<li>${contact.name} - ${contact.phone}</li>`;
+      });
+    }
+  </script>
+
+</body>
+</html>

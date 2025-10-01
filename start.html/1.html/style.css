@@ -3,6 +3,55 @@
             --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
 }
+
+#search {
+  position: relative;
+  width: 400px;
+  margin: 100px auto; /* centers on page */
+}
+
+#blue {
+  width: 100%;
+  height: 40px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  padding: 0 15px;
+  outline: none;
+}
+
+#blue:hover{
+     box-shadow: 0 10px 3px rgba(0,0,0,0.15);
+     transform: scale(1.1);
+     transition: all 0.3s ease;
+}
+
+#list {
+  position: absolute;
+  top: 45px; /* just below input */
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none; /* hidden by default */
+  z-index: 1000;
+}
+
+#list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#list li:hover {
+  background: #f093fb;
+  color: white;
+}
+
 .container{
     
     padding: 20px;
@@ -14,6 +63,9 @@
     align-items: center;
     margin: auto;
     position:fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(255, 255, 255);
     
 }
 #logo{
@@ -49,7 +101,7 @@
 
 .heading{
     text-decoration: none;
-    color: white;
+    color: rgb(24, 5, 2);
     padding-right: 40px;
     font-weight: bold;
     
@@ -57,36 +109,33 @@
 }
 .heading:hover{
        box-shadow: 0 10px 3px rgba(0,0,0,0.15);
-                 transform: scale(1.10);
+                    transform: scale(1.1);
+                    transition: all 0.3s ease;
 
 
 
 }
+html {
+  scroll-behavior: smooth;
+}
 
-#box{
-    height: 550px;
-    width: 900px;
-    margin: auto;
-    display: flex;
-    justify-content: space-around;
+#box {
+    max-width: 1200px; 
+    margin: 30px auto;         
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px;
-    padding-top: px;
-    margin-left: 130px;
-    row-gap: 50px;
-    column-gap: 60px;
-    padding-right: 250px;
-
-    
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-content: center;  
+    padding: 20px;
 }
-.sidebox{
-    height: 250px; 
-    width: 270px;
-    background-color: white;
-    border-radius: 10px;
 
+.sidebox {
+    height: 280px; 
+    width: 300px;              
+    background-color: rgb(74, 67, 67);
+    border-radius: 8px;
 }
+
 
 #box1:hover {
                  box-shadow: 0 10px 3px rgba(0,0,0,0.15);
@@ -165,32 +214,36 @@
                  transition: all 0.3s ease;
 }
 
-.img-box{
-   width: 270px;
-   height: 200px;
+.img-box {
+  width: 100%;
+  height: 200px;
    background-image: url(https://www.whiskaffair.com/wp-content/uploads/2021/05/Gochujang-Noodles-2-3.jpg);
    background-position: center;
    background-size: cover;
    border-radius: 10px;
    background-repeat: no-repeat;
    align-items: center;
+  margin-bottom: 10px;
 }
-.img-box2{
-  width: 270px;
+
+.img-box2 {
+  width: 100%;
   height: 200px;
   background-image: url(https://img.freepik.com/premium-photo/food-images-any-restaurant_729149-108169.jpg);
   background-position: center;
   background-size: cover;
   border-radius: 10px;
+  margin-bottom: 10px;
 }
-.img-box3{
-    width: 270px;
-    height: 200px;
-    background-image: url(https://cravinghomecooked.com/wp-content/uploads/2019/08/crispy-fried-chicken-1.jpg);
-    background-position: center;
-    background-size: cover;
+.img-box3 {
+  width: 100%;
+  height: 200px;
+  background-image: url(https://cravinghomecooked.com/wp-content/uploads/2019/08/crispy-fried-chicken-1.jpg);
+  background-position: center;
+  background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
+      margin-bottom: 10px;
 
 }
 .img-box4{
@@ -201,6 +254,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
+      margin-bottom: 10px;
 }
 .img-box5{
     width: 270px;
@@ -210,34 +264,78 @@
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
+      margin-bottom: 10px;
 }
 .img-box6{
-    width: 270px;
+    width: 300px;
     height: 200px;
     background-image: url(https://img.onmanorama.com/content/dam/mm/en/food/foodie/images/2019/10/1/idli.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
+      margin-bottom: 10px;
 }
-.img-box7{
-    width: 270px;
+.img-box7 {
+    width: 100%;
     height: 200px;
     background-image: url(https://www.whiskaffair.com/wp-content/uploads/2020/04/Kerala-Parotta-1.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
+      margin-bottom: 10px;
 }
-.img-box8{
-    width: 270px;
+.img-box8 {
+    width: 100%;
     height: 200px;
     background-image: url(https://images4.alphacoders.com/644/644372.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 10px;
+      margin-bottom: 10px;
 }
+#order-first{
+    width: 20px;
+    height: 15px;
+    font-weight: bold;
+    border-radius: 50px;
+    background-color: rgb(99, 172, 99);
+    color: white;
+    border: none;
+    font-size: 15px;
+}
+.content-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+
+.content-box h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.order-btn {
+  background: #ff5722;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.order-btn:hover {
+  background: #e64a19;
+}
+
+
 .menu{
     height: 40px;
     padding-left: 50px;
@@ -366,7 +464,7 @@
     width: 1500px;
     height: 300px;
     margin: auto;
-    padding-top: 20px;
+    padding-top: 90px;
     display: flex;
     display: grid;
     grid-template-columns: repeat(2 , 1fr);
@@ -540,14 +638,39 @@
     height: 100px;
 }
 
-.blue{
-    width: 400px;
-    height: 40px;
-    border-radius: 30px;
-    border: none;
-}
-.blue:hover{
+#blue:hover{
      box-shadow: 0 10px 3px rgba(0,0,0,0.15);
      transform: scale(1.1);
      transition: all 0.3s ease;
+}
+
+
+.sidebox {
+
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+}
+
+.img-box {
+  width: 100%;
+  height: 200px;
+   background-image: url(https://www.whiskaffair.com/wp-content/uploads/2021/05/Gochujang-Noodles-2-3.jpg);
+   background-position: center;
+   background-size: cover;
+   border-radius: 10px;
+   background-repeat: no-repeat;
+   align-items: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+#list{
+    list-style: none;
+    
+
+
 }

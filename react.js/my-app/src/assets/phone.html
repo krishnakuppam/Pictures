@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <style>
+    input {
+      margin: 10px;
+      padding: 5px;
+    }
+    ul li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="text" id="taskInput" placeholder="Type task">
+  <button id="addTaskButton">Add Task</button>
+
+  <h1>Task Container</h1>
+  <ul id="taskList"></ul>
+
+  <script>
+    let taskInput = document.getElementById("taskInput");
+    let addTaskButton = document.getElementById("addTaskButton");
+    let taskList = document.getElementById("taskList");
+
+    addTaskButton.addEventListener("click", () => {
+      if (taskInput.value.trim() !== "") {
+        let newLi = document.createElement("li");
+        newLi.textContent = taskInput.value;
+
+        let removeButton = document.createElement("button");
+        removeButton.textContent = "Remove";
+        removeButton.addEventListener("click", () => {
+          taskList.removeChild(newLi);
+        });
+
+        newLi.appendChild(removeButton);
+        taskList.appendChild(newLi);
+
+        taskInput.value = ""; // clear input
+      }
+    });
+  </script>
+
+</body>
+</html>

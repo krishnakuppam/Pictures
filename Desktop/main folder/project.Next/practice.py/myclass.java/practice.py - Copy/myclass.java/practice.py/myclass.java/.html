@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <h1>to do</h1>
+
+  <input type="text" id="input" placeholder="enter task here">
+  <button id="btn">Task</button>
+  
+
+  <div id="taskholder"></div>
+
+
+  <script>
+ let inputtask = document.querySelector("#input")
+ let btn = document.querySelector("#btn")
+ let div = document.querySelector("#taskholder")
+
+ 
+ btn.addEventListener("click", () =>{
+  if(inputtask.value.trim()){
+    let li = document.createElement("div");
+    
+    // Get current time
+    let now = new Date();
+    let timeString = now.toLocaleTimeString();
+    
+    // Create task with time
+    li.innerHTML = `<span>${inputtask.value}</span> <small style="color: #666;">(${timeString})</small>`;
+    
+    let removebutton = document.createElement("button");
+    removebutton.innerText = "remove";
+    
+    removebutton.addEventListener("click", () => {
+      div.removeChild(li);
+    });
+    
+    li.appendChild(removebutton);
+    div.appendChild(li);
+    inputtask.value = "";
+  }
+ });
+  </script>
+  
+</body>
+</html>

@@ -6,8 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bakso food</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
+  <script>
+    let search = document.getElementById('search');
+let matchList = document.getElementById('match-list');
+// Search states.json and filter it
+const searchStates = async searchText => {
+  const res = await fetch('states.json');
+  const states = await res.json();
+  
+  
+  let matches = states.filter(state => {
+    const regex = new RegExp(`^${searchText}`, 'gi');
+    return state.name.match(regex) || state.abbr.match(regex);
+  }
+
+  );
+  if (searchText.length === 0) {
+    matches = [];
+    matchList.innerHTML = '';
+  }
+  outputHtml(matches);
+} 
+// Show results in HTML
+const outputHtml = matches => {
+  if (matches.length > 0) {
+
+    const html = matches.map(match => `
+      <div class="card card-body mb-1">
+        <h4>${match.name} (${match.abbr}) <span class="text-primary">${match.capital}</span></h4>
+        <small>Lat: ${match.lat} / Long: ${match.long}</small>
+      </div>
+    `).join('');
+    matchList.innerHTML = html;
+  }
+};
+
+search.addEventListener('input', () => searchStates(search.value));
+
+
+
+
+  </script>
+  
+   
+
+
     <div class="container">
 
         <div id="logo">
@@ -15,7 +61,13 @@
         </div>
 
         <div id="search">
-            <input class="blue" type="search" placeholder="  Search for restaurant and food                                                🔍︎">
+            <input id="blue" type="search" placeholder="  Search for restaurant and food                                       🔍︎">
+            <ul id="list">
+                <li>Idli</li>
+                <li>Dosa</li>
+                <li>chapathi</li>
+                <li>parota</li>
+          </ul>
         </div>
 
         <div id="sidelogo">
@@ -62,42 +114,75 @@
          </div>
 
     <div id="box">
-        <div id="box1" class="sidebox">
-            <div class="img-box">
-            </div> 
-             <h3>noodels</h3>
-        </div>
+       <div id="box1" class="sidebox">
+  <div class="img-box">
+    <div class="img-box"></div>
+  </div> 
+  <div class="content-box">
+    <h3>Noodles</h3>
+    <button class="order-btn" onclick="window.location.href='order.html'">Order Now</button>
+  </div>
+</div>
+
         <div id="box1" class="sidebox">
             <div class="img-box2">
             </div>
-            <h3>burgar</h3>
+            <div class="content-box">
+    <h3>Burger</h3>
+    <button class="order-btn">Order Now</button>
+  </div>
         </div>
         <div id="box1" class="sidebox">
              <div class="img-box3"></div>
-             <h3>Fry Chicken</h3>
+             <div class="content-box">
+    <h3>Fry Chicken</h3>
+    <button class="order-btn">Order Now</button>
+  </div>
         </div>
         <div id="box1" class="sidebox">
-            <div class="img-box4">
-               
-            </div>
-            <h3>Chapati</h3>
-        </div>
-        <div id="box1" class="sidebox">
-            <div class="img-box5"></div>
-            <h3>Dosa</h3>
-        </div>
+  <div class="img-box">
+    <div class="img-box"></div>
+  </div> 
+  <div class="content-box">
+    <h3>Noodles</h3>
+    <button class="order-btn">Order Now</button>
+  </div>
+</div>
+
+         <div id="box1" class="sidebox">
+  <div class="img-box">
+    <div class="img-box"></div>
+  </div> 
+  <div class="content-box">
+    <h3>Noodles</h3>
+    <button class="order-btn">Order Now</button>
+  </div>
+</div>
+
         <div id="box1" class="sidebox">
             <div class="img-box6"></div>
-            <h3>idli</h3>
-        </div>
+            <div class="content-box">
+    <h3>Idli</h3>
+    
+    <button class="order-btn">Order Now</button>
+  </div>
+    
+</div>
         <div id="box1" class="sidebox">
             <div class="img-box7"></div>
-            <h3>Parota</h3>
-        </div>
+            <div class="content-box">
+    <h3>Parota</h3>
+    <button class="order-btn">Order Now</button>
+  </div>
+</div>
+
         <div id="box1" class="sidebox">
             <div class="img-box8">
             </div>
-            <H3>Pizza</H3>
+            <div class="content-box">
+    <h3>Pizza</h3>
+    <button class="order-btn">Order Now</button>
+  </div>
         </div>
 
     

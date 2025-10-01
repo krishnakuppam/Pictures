@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <button id="addTaskButton">Add Task</button>
+    <ul id="taskList"></ul>
+
+    <script>
+      let taskInput = document.getElementById("taskInput");
+      let addTaskButton = document.getElementById("addTaskButton");
+      let taskList = document.getElementById("taskList");
+
+      addTaskButton.addEventListener("click", () => {
+        if (taskInput.value.trim() !== "") {
+
+          let newli = document.createElement("li");
+
+          // Get current time
+          const now = new Date();
+          let time = now.toLocaleTimeString();
+
+          // Add task text + time
+          newli.textContent = `${taskInput.value} (Added at: ${time}) `;
+
+          // Create Remove button
+          let removeButton = document.createElement("button");
+          removeButton.textContent = "Remove";
+          removeButton.style.marginLeft = "10px";
+
+          removeButton.addEventListener("click", () => {
+            taskList.removeChild(newli);
+          });
+
+          // Add remove button to list item
+          newli.appendChild(removeButton);
+
+          // Add list item to task list
+          taskList.appendChild(newli);
+
+          // Clear input box
+          taskInput.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>

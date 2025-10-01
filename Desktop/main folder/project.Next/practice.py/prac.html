@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calculator (Vanilla JS)</title>
+  <style>
+    :root {
+      --bg: #0f172a; /* slate-900 */
+      --panel: #111827ee; /* gray-900-ish */
+      --ink: #e5e7eb; /* gray-200 */
+      --muted: #94a3b8; /* slate-400 */
+      --accent: #22d3ee; /* cyan-400 */
+      --accent-2: #a78bfa; /* violet-400 */
+      --danger: #fb7185; /* rose-400 */
+      --ok: #4ade80; /* green-400 */
+      --ring: #334155; /* slate-700 */
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 10% 10%, #1e293b, #0b1226), var(--bg);
+      color: var(--ink);
+      display: grid; place-items: center; padding: 24px;
+    }
+    .wrap {
+      width: min(420px, 100%);
+    }
+    .title {
+      display:flex; gap:12px; align-items:center; justify-content:space-between; margin-bottom: 10px;
+    }
+    .badge { font-size: 12px; letter-spacing: .08em; color: var(--muted); border:1px solid var(--ring); padding:4px 8px; border-radius: 999px; }
+
+    .calc {
+      background: linear-gradient(180deg, #0b1226ee, #0a0f20dd);
+      border: 1px solid var(--ring);
+      border-radius: 20px; padding: 16px; box-shadow: 0 20px 60px #0008;
+    }
+    .screen {
+      background: #0b1220; border: 1px solid var(--ring);
+      border-radius: 14px; padding: 14px 12px; min-height: 92px; display:grid; gap:6px;
+    }
+    .expr { font-size: 14px; color: var(--muted); text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .value { font-size: clamp(28px, 6vw, 42px); text-align: right; font-weight: 700; }
+    .preview { font-size: 12px; color: var(--accent); text-align:right; min-height: 14px; }
+
+    .keys { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 14px; }
+    button {
+      appearance: none; border: 1px solid var(--ring); color: var(--ink); background: #0d1426cc;
+      border-radius: 14px; padding: 14px; font-size: 18px; font-weight: 600; cursor: pointer;
+      transition: transform .06s ease, background .2s ease, border-color .2s ease;
+    }
+    button:active { transform: scale(.98); }
+    button:focus-visible { outline: none; box-shadow: 0 0 0 3px #000, 0 0 0 5px var(--accent); }
+    .op { background: linear-gradient(180deg, #111c38, #0f1a33); }
+    .eq { background: linear-gradient(180deg, #132f3e, #10303e); border-color: #134e4a; }
+    .eq:hover { background: linear-gradient(180deg, #174353, #13414f); }
+    .danger { border-color: #4c1d1d; background: linear-gradient(180deg, #2b1620, #221019); }
+    .muted { color: var(--muted); font-weight: 700; }
+
+    .footer { margin-top: 10px; text-align:center; font-size: 12px; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="title">
+      <div style="font-weight:800; font-size:20px; letter-spacing:.3px">Calculator</div>
+      <div class="badge">Vanilla JS • Keyboard friendly</div>
+    </div>
+
+    <div class="calc" role="application" aria-label="Calculator">
+      <div class="screen" aria-live="polite">
+        <div id="expr" class="expr"></div>
+        <div id="value" class="value">0</div>
+        <div id="preview" class="preview"></div>
+      </div>
+
+      <div class="keys">
+        <button class="muted" data-k="MC">MC</button>
+        <button class="muted" data-k="MR">MR</button>
+        <button class="muted" data-k="M+">M+</button>
+        <button class="muted" data-k="M-">M-</button>
+
+        <button class="op" data-k="(">(</button>
+        <button class="op" data-k=")">)</button>
+        <button class="op" data-k="%">%</button>
+        <button class="danger" data-k="AC">AC</button>
+
+        <button data-k="7">7</button>
+        <button data-k="8">8</button>
+        <button data-k="9">9</button>
+        <button class="op" data-k="/">÷</button>
+
+        <button data-k="4">4</button>
+        <button data-k="5">5</button>
+        <button data-k="6">6</button>
+        <button class="op" data-k="*">×</button>
+
+        <button data-k="1">1</button>
+        <button data-k="2">2</button>
+        <button data-k="3">3</button>
+        <button class="op" data-k="-">−</button>
+
+        <button data-k="0">0</button>
+        <button data-k=".">.</button>
+        <button class="op" data-k="+">＋</button>
+        <button class="eq" data-k="=">=</button>
+
+        <button class="muted" data-k="±">±</button>
+        <button class="muted" data-k="DEL">DEL</button>
+        <button class="muted" data-k="^">^</button>
+        <button class="muted" data-k="HIST">HIST</button>
+      </div>
+    </div>
+    <div class="footer">Tip: use keyboard: 0–9 . + − × ÷ ( ) Enter, Backspace, C</div>
+  </div>
+
+  <script>
+    // --- Tiny Expression Engine (tokenize -> RPN -> eval) ---
+    function tokenize(expr){
+      const out=[]; const s=expr.replace(/\s+/g,""); let i=0;
+      while(i<s.length){
+        const ch=s[i];
+        if(/[0-9.]/.test(ch)){
+          let j=i+1; while(j<s.length && /[0-9.]/.test(s[j])) j++;
+          const num=s.slice(i,j); if((num.match(/\./g)||[]).length>1) throw Error('Invalid number');
+          out.push({t:'n',v:parseFloat(num)}); i=j; continue;
+        }
+        if(/[+\-*/^()%]/.test(ch)){ out.push({t:'o',v:ch}); i++; continue; }
+        throw Error('Bad token '+ch);
+      }
+      return out;
+    }
+    const prec={"^":4,"*":3,"/":3,"%":3,"+":2,"-":2};
+    const rightAssoc=new Set(['^']);
+    function toRPN(tokens){
+      const out=[]; const ops=[]; let prev=null;
+      for(const t of tokens){
+        if(t.t==='n') out.push(t);
+        else if(t.t==='o'){
+          const v=t.v;
+          if(v==='(') ops.push(t);
+          else if(v===')'){
+            while(ops.length && ops[ops.length-1].v!=='(') out.push(ops.pop());
+            if(!ops.length) throw Error('Mismatched parens'); ops.pop();
+          } else {
+            const isUnary = (v==='+'||v==='-') && (!prev || (prev.t==='o' && prev.v!==')' && prev.v!=='%'));
+            if(isUnary){ ops.push({t:'u',v: v==='+'?'u+':'u-'}); }
+            else {
+              while(ops.length && ((ops[ops.length-1].t==='o' && ((rightAssoc.has(v) && prec[v]<prec[ops[ops.length-1].v]) || (!rightAssoc.has(v) && prec[v]<=prec[ops[ops.length-1].v]))) || ops[ops.length-1].t==='u')) out.push(ops.pop());
+              ops.push(t);
+            }
+          }
+        }
+        prev=t;
+      }
+      while(ops.length){ const o=ops.pop(); if(o.v==='('||o.v===')') throw Error('Mismatched parens'); out.push(o); }
+      return out;
+    }
+    function evalRPN(rpn){
+      const st=[]; for(const t of rpn){
+        if(t.t==='n') st.push(t.v);
+        else if(t.t==='u'){ const a=st.pop(); if(a===undefined) throw Error('Bad expr'); st.push(t.v==='u-'?-a:+a); }
+        else if(t.t==='o'){
+          const b=st.pop(), a=st.pop(); if(a===undefined||b===undefined) throw Error('Bad expr');
+          switch(t.v){ case '+': st.push(a+b); break; case '-': st.push(a-b); break; case '*': st.push(a*b); break; case '/': if(b===0) throw Error('Division by zero'); st.push(a/b); break; case '%': st.push(a%b); break; case '^': st.push(Math.pow(a,b)); break; default: throw Error('op'); }
+        }
+      }
+      if(st.length!==1) throw Error('Bad expr'); return st[0];
+    }
+    function safeEval(s){ return evalRPN(toRPN(tokenize(s))); }
+
+    // --- UI Logic ---
+    const exprEl = document.getElementById('expr');
+    const valueEl = document.getElementById('value');
+    const previewEl = document.getElementById('preview');
+    const keys = document.querySelectorAll('[data-k]');
+
+    let expr = '';
+    let memory = 0;
+    let history = [];
+
+    function render(){
+      exprEl.textContent = expr || '\u00A0';
+      valueEl.textContent = currentDisplay();
+      previewEl.textContent = preview();
+    }
+    function currentDisplay(){
+      if(!expr) return '0';
+      try{
+        if(/[+\-*/^%]$/.test(expr)) return expr.replace(/^0+(?=\d)/,'');
+        const v = safeEval(expr);
+        return String(+parseFloat(v.toFixed(10)));
+      }catch{ return expr; }
+    }
+    function preview(){
+      if(!expr || /[+\-*/^%]$/.test(expr)) return '';
+      try{ const v=safeEval(expr); return Number.isFinite(v)? String(+parseFloat(v.toFixed(10))) : ''; }catch{ return ''; }
+    }
+
+    function press(k){
+      switch(k){
+        case 'AC': expr=''; break;
+        case 'DEL': expr = expr.slice(0,-1); break;
+        case '=': doEquals(); break;
+        case '±': toggleSign(); break;
+        case 'MC': memory=0; break;
+        case 'MR': expr += String(memory); break;
+        case 'M+': try{ memory += expr? safeEval(expr):0; }catch{} break;
+        case 'M-': try{ memory -= expr? safeEval(expr):0; }catch{} break;
+        case 'HIST': alert(history.map(h=>`${h.expr} = ${h.res}`).join('\n') || 'No history'); break;
+        default:
+          if(k==='.' && /(^|[^0-9])\d*\.(\d*)?$/.test(expr)) { /* prevent double dot in same number segment? */ }
+          expr += k;
+      }
+      render();
+    }
+
+    function doEquals(){
+      try{
+        const res = String(+parseFloat(safeEval(expr).toFixed(10)));
+        history.unshift({expr, res, ts: Date.now()}); history = history.slice(0,25);
+        expr = res;
+      }catch{ flash('Error', true); }
+    }
+    function toggleSign(){
+      if(!expr){ expr='-'; return; }
+      const m = /([0-9.]+)(?!.*[0-9.])/; // last number
+      const idx = expr.search(m);
+      if(idx===-1){ expr = expr.startsWith('-')? expr.slice(1): '-' + expr; return; }
+      const match = expr.match(m); if(!match) return;
+      const num = match[0]; const start = expr.lastIndexOf(num);
+      const toggled = String(-parseFloat(num));
+      expr = expr.slice(0,start) + toggled + expr.slice(start+num.length);
+    }
+
+    function flash(msg, isErr){
+      valueEl.textContent = msg;
+      valueEl.style.color = isErr? 'var(--danger)':'var(--ok)';
+      setTimeout(()=>{ valueEl.style.color=''; render(); }, 700);
+    }
+
+    keys.forEach(b=> b.addEventListener('click', e=> press(e.currentTarget.dataset.k)));
+
+    // Keyboard support
+    window.addEventListener('keydown', (e)=>{
+      if(e.target.tagName==='INPUT' || e.target.tagName==='TEXTAREA') return;
+      const k = e.key;
+      if(/^[0-9.]$/.test(k)) press(k);
+      else if(['+','-','*','/','%','^','(',')'].includes(k)) press(k);
+      else if(k==='Enter' || k==='='){ e.preventDefault(); press('='); }
+      else if(k==='Backspace'){ press('DEL'); }
+      else if(k.toLowerCase()==='c'){ press('AC'); }
+    });
+
+    render();
+  </script>
+</body>
+</html>
