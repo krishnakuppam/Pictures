@@ -14,6 +14,9 @@ def view_tasks():
     if not tasks:
         print("No tasks yet!")
     else:
+
+
+        
         for i, (task, done) in enumerate(tasks, start=1):
             status = "✔️" if done else "❌"
             print(f"{i}. {task} [{status}]")
@@ -66,6 +69,6 @@ while True:
         print("Goodbye!")
         break
 
-    
+
     else:
         print("Invalid choice! Try again.")
