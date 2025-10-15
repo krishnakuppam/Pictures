@@ -5,7 +5,7 @@ import Navbar from './pages/Navbar'
 const App = () => {
   return (
     <div>
-      
+         
       
         <Navbar />
        
