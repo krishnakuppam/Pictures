@@ -19,6 +19,8 @@ public class EvenOdd {
         else{
             System.out.println("odd");
         }
+        
+        sc.close(); // Close the scanner to prevent resource leak
     } 
     
     
