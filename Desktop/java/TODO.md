@@ -1,0 +1,2 @@
+- [x] Fix the loop in Nnum.java to sum natural numbers up to 10 and move print statement outside the loop
+- [x] Verify the code runs correctly

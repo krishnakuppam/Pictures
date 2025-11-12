@@ -1,3 +1,95 @@
+Tor Browser 14.5.8 - October 08 2025
+ * All Platforms
+   * Updated Tor to 0.4.8.19
+   * Updated OpenSSL to 3.5.4
+   * Bug 44239: DDG HTML page and search results displayed incorrectly with Safest security setting [tor-browser]
+   * Bug 44240: Typo on dom.security.https_first_add_exception_on_failure [tor-browser]
+   * Bug 44244: Backport Security Fixes from Firefox 144 [tor-browser]
+   * Bug 41574: Update Snowflake builtin bridge lines [tor-browser-build]
+ * Windows + macOS + Linux
+   * Bug 44032: Implement YEC 2025 Takeover for Desktop Stable [tor-browser]
+ * Android
+   * Bug 44031: Implement YEC 2025 Takeover for Android Stable [tor-browser]
+
+Tor Browser 14.5.7 - September 16 2025
+ * All Platforms
+   * Updated OpenSSL to 3.5.2
+   * Bug 44136: Backport tor-browser#44081: Swiping away the "private tabs" notification requires rebootstrapping [tor-browser]
+   * Bug 44199: Backport Security Fixes from Firefox 143 [tor-browser]
+   * Bug 41441: Backport tor-browser-build#41432: Bump OpenSSL to 3.5.0 [tor-browser-build]
+   * Bug 41462: Backport #40994 and #41280: Add support in signing scripts to sign release for some archs only & Update download-android-*.json files for android-only releases [tor-browser-build]
+   * Bug 41543: mmdebstrap-image fails to build bookworm images on maint-14.5 [tor-browser-build]
+ * Build System
+   * All Platforms
+     * Bug 41554: Export SIGNING_PROJECTNAME and tbb_version in linux-signer-sign-android-apks, in maint-14.5 [tor-browser-build]
+
+Tor Browser 14.5.6 - August 19 2025
+ * All Platforms
+   * Updated NoScript to 13.0.9
+   * Bug 44048: Backport Bug 1979608 [tor-browser]
+   * Bug 44093: Rebase Tor Browser stable onto 128.14.0esr [tor-browser]
+   * Bug 44100: Backport Security Fixes from Firefox 142 [tor-browser]
+   * Bug 41515: Bump version of Conjure to include P173 improvements [tor-browser-build]
+ * Windows + macOS + Linux
+   * Updated Firefox to 128.14.0esr
+   * Bug 44041: Letterboxing causes greyed out alert background to be mis-aligned [tor-browser]
+ * Android
+   * Updated GeckoView to 128.14.0esr
+   * Updated Zstandard to 1.5.7
+   * Bug 43346: Remove the "[android] Stop PrivateNotificationService" patch [tor-browser]
+   * Bug 43645: Swiping away doesn't always disconnect from tor [tor-browser]
+ * Build System
+   * Windows + Linux + Android
+     * Updated Go to 1.23.12
+
+Tor Browser 14.5.5 - July 22 2025
+ * All Platforms
+   * Updated Tor to 0.4.8.17
+   * Updated OpenSSL to 3.0.17
+   * Bug 43979: Rebase Tor Browser Stable onto 128.13.0esr [tor-browser]
+   * Bug 43993: Backport Security Fixes from Firefox 141 [tor-browser]
+   * Bug 41508: Switch built-in meek bridge to meek-unredacted [tor-browser-build]
+ * Windows + macOS + Linux
+   * Updated Firefox to 128.13.0esr
+ * Android
+   * Updated GeckoView to 128.13.0esr
+ * Build System
+   * Windows + Linux + Android
+     * Updated Go to 1.23.11
+
+Tor Browser 14.5.4 - June 23 2025
+ * All Platforms
+   * Updated NoScript to 13.0.8
+   * Bug 43783: Tighten up the SecurityLevel module to enforce new UX flow [tor-browser]
+   * Bug 43784: Get confirmation from NoScript that settings are applied [tor-browser]
+   * Bug 43885: Rebase stable onto 128.12.0esr [tor-browser]
+   * Bug 43911: Backport security fixes from Firefox 140 [tor-browser]
+ * Windows + macOS + Linux
+   * Updated Firefox to 128.12.0esr
+   * Bug 43782: Add new UX flow for changing security level (Desktop) [tor-browser]
+ * Android
+   * Updated GeckoView to 128.12.0esr
+   * Bug 43786: Add new UX flow for changing security level (Android) [tor-browser]
+ * Build System
+   * All Platforms
+     * Bug 41477: Update keyring/boklm.gpg for new subkeys (2025) [tor-browser-build]
+     * Bug 41498: Update keyring/morgan.gpg with updated public key [tor-browser-build]
+   * Windows + Linux + Android
+     * Updated Go to 1.23.10
+
+Tor Browser 14.5.3 - May 26 2025
+ * All Platforms
+   * Updated NoScript to 13.0.6
+   * Bug 43811: Backport security fixes from Firefox 139 [tor-browser]
+   * Bug 439: Rebase Mullvad Browser stable onto 128.11.0esr [mullvad-browser]
+ * Windows + macOS + Linux
+   * Updated Firefox to 128.11.0esr
+ * Android
+   * Updated GeckoView to 128.11.0esr
+ * Build System
+   * Android
+     * Bug 43809: Allow tba-fetch-deps.sh to fetch prebuilt artifacts from tor-browser-build from nightlies [tor-browser]
+
 Tor Browser 14.5.2 - May 18 2025
  * All Platforms
    * Bug 43397: Click to play should override "Any capability blocked in the top document must be blocked in its subdocuments too" [tor-browser]

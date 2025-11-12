@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <linK https://cdnjs.cloudflare.com/ajax/libs/akar-icons-fonts/1.1.22/css/akar-icons.css>
+    
+</head>
+
+<style>
+    body{
+    margin :0;
+    font-family: Arial, sans-serif;
+    
+    }
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        
+        
+    }
+    .nav-links a {
+        text-decoration: none;
+        color: #333;
+        padding: 14px 20px;
+        
+    }
+     a:hover {
+        background-color: #ddd;
+        
+    }
+    .nav_bar {
+        border-radius: 2px solid #251313;
+        display: flex;
+        align-items: center ;
+        justify-content: space-around;
+        background-color: #f2f2f2;
+        padding: 5px 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        
+    }
+    #Logo {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+
+    @media screen and (max-width: 600px) {
+
+        .nav-links {
+            display: none;
+        }
+        .nav-links {
+            flex-direction: column;
+        }
+        .nav-links a {
+            padding: 10px;
+        }
+        
+    }
+   
+
+</style>
+<body>
+
+    <header>
+        <nav  class="nav_bar">
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class="toggle">
+            <i class="fa-solid fa-bars-staggered"></i>
+        </div>
+    </section>
+
+
+    
+</body>
+</html>
