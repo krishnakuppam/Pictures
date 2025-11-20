@@ -1,0 +1,106 @@
+#signup-page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  background-color: #020202;
+    flex-direction: column;
+    
+}
+#signup-middle{
+    width: 600px;
+    height: 500px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    flex-direction: column;
+    
+}
+#login-btn{
+    width: 620px;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    background-color:#0d3c70;
+    color: rgba(188, 183, 183, 0.778);
+    font-size: 17px;
+    cursor: pointer;
+    
+}
+#login-btn:hover{
+    background-color: #00438160;
+}
+#forget-password-btn{
+    width: 620px;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 17px;
+    
+    margin-top: 10px;
+}
+#forget-password-btn:hover{
+    background-color: #66758298;
+    cursor: pointer;
+}
+#signup-middle input{
+    width: 600px;
+    height: 60px;
+    border: 1px solid rgb(136, 131, 131);
+    border-radius: 15px;
+    background-color: #162127;
+    color: rgb(180, 83, 83);
+    font-size: 15px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+#signup-middle input::placeholder{
+    color: #839bae;
+    font-size: 17px;
+}
+#signup-middle input:hover{
+    border: 2px solid #676e75;
+}
+
+.signup-container{
+    width: 700px;
+    height: 100%;
+    border: 1px solid rgb(136, 131, 131);
+    background-color: #162127;
+}
+.signup-container h2{
+    color: rgb(178, 187, 195);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+#signup-bottom{
+    width: 500px;
+    height: 100px;
+    border-top: 1px solid rgb(114, 47, 47);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 1px;
+    
+}
+#signup-bottom button{
+    width: 620px;
+    height: 50px;
+    border: none;
+    border-radius: 25px;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 17px;
+    
+    margin-top: 10px;
+}
+#signup-bottom button:hover{
+    background-color: #66758298;
+    cursor: pointer;
+}
