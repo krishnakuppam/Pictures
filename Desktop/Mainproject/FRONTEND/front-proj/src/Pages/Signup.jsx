@@ -1,26 +1,21 @@
 import React from 'react'
-import '../Sign.css'
+import { Color } from 'three/src/Three.Core.js'
 
 const Signup = () => {
   return (
-    <div id='signup-page'>
-        
-        <div className="signup-container">
-            <div id="signup-middle">
-            <h2>Log into instagram</h2>
-            <input type="text" placeholder='Phone number, username, or email' />
-            <input type="password" placeholder='Password' />
-            <button id='login-btn'>Log In</button>
-            <button id='forget-password-btn'>Forget password?</button>
-            </div>
-            <div id="signup-bottom">
+    <div className='signup-container0'>
 
-              <button>Login with facebook</button>
-              <button>Create a new account</button>
-              <h2>Meta</h2>
+     
+     <div className='signup-container1'>
+              <h3><img width="20" height="20" src="https://img.icons8.com/fluency/48/meta.png" alt="meta"/>Meta</h3>
+              <h2>Get started on instagram</h2>
+              <p>Sign up to see photos and videos from your friends.</p>
+              <p>Mobile numder or Email address</p>
+              <input id='input' placeholder='Mobile numder or Email address' />
+              <p>You may receive notification from us. <span style={{color:'blue'}}>learn why ask for your information</span></p>
+              
+     </div>
 
-            </div>
-        </div>
       
     </div>
   )

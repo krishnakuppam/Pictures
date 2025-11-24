@@ -11,7 +11,6 @@
 #signup-middle{
     width: 600px;
     height: 500px;
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,33 +73,50 @@
     background-color: #162127;
 }
 .signup-container h2{
-    color: rgb(178, 187, 195);
+    color: aliceblue;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
 }
 #signup-bottom{
-    width: 500px;
-    height: 100px;
-    border-top: 1px solid rgb(114, 47, 47);
+    width: 700px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 1px;
+    gap: 10px;
+    margin:auto;
+    bottom: 10px;
     
 }
-#signup-bottom button{
+#btn1{
     width: 620px;
     height: 50px;
-    border: none;
+     border: 1px solid rgb(128, 120, 120);
     border-radius: 25px;
     background-color: transparent;
-    color: #ffffff;
+    color: rgba(188, 183, 183, 0.778);
+    font-size: 17px;
+    cursor: pointer; 
+}
+#btn2{
+    width: 620px;
+    height: 50px;
+    border: 1px solid rgb(128, 120, 120);
+    border-radius: 25px;
+    background-color:transparent;
+    color: rgb(112, 175, 238);
     font-size: 17px;
     
-    margin-top: 10px;
 }
-#signup-bottom button:hover{
-    background-color: #66758298;
+#btn1:hover{
+    background: #616364;
     cursor: pointer;
+    
+}
+#btn2:hover{
+     background-color: #6a68686f;
+}
+#signup-bottom h2 img {
+    color: #ffffff;
 }
