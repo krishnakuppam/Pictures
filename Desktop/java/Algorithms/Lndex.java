@@ -1,4 +1,6 @@
-public import java.util.Scanner;
+package Algorithms;
+
+import java.util.Scanner;
 
 public class Lndex {
     public static void main(String[] args) {
@@ -34,7 +36,4 @@ public class Lndex {
             }
         }
     }
-}
- Lndex {
-    
 }
