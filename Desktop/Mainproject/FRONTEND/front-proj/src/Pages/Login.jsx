@@ -6,11 +6,13 @@ import { useNavigate } from 'react-router-dom'
 const Login = () => {
 
       const Navigate = useNavigate()
-      const sigup = () => {
+      const sigup = () => { 
             Navigate('/Signup')
       };
   return (
     <div id='signup-page'>
+
+         
         
         <div className="signup-container">
             <div id="signup-middle">

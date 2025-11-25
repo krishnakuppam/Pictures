@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body{
+    margin: 0%;
+    padding: 0%;
+
+}
+
+.signup-container0{
+    margin: auto;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color:#162127;
+    color: aliceblue;
+}
+
+.signup-container1 {
+  width: 400px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+}
