@@ -9,7 +9,7 @@ import Login from './Login'
 const Signup = () => {
 
   const Navigate = useNavigate();
-  const back = () => { Navigate('/')}
+  const back = () => { Navigate('/Login')}
   return (
     <div className='signup-container0'>
 

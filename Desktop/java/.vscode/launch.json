@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DoWhileLoop",
+            "request": "launch",
+            "mainClass": "Algorithms.DoWhileLoop",
+            "projectName": "java_6f194389"
+        },
+        {
+            "type": "java",
             "name": "Reversenum",
             "request": "launch",
             "mainClass": "Reversenum",
