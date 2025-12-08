@@ -9,12 +9,13 @@
 // - modify it via the UI (e.g. via about:config in the browser); or
 // - set it within a user.js file in your profile.
 
-user_pref("app.update.download.attempts", 0);
+user_pref("app.update.backgroundErrors", 1);
+user_pref("app.update.download.attempts", 1);
 user_pref("app.update.elevate.attempts", 0);
-user_pref("app.update.lastUpdateTime.addon-background-update-timer", 1761985953);
-user_pref("app.update.lastUpdateTime.background-update-timer", 1761985953);
-user_pref("app.update.lastUpdateTime.browser-cleanup-thumbnails", 1761985953);
-user_pref("app.update.lastUpdateTime.xpi-signature-verification", 1761985953);
+user_pref("app.update.lastUpdateTime.addon-background-update-timer", 1764757516);
+user_pref("app.update.lastUpdateTime.background-update-timer", 1764757516);
+user_pref("app.update.lastUpdateTime.browser-cleanup-thumbnails", 1764757516);
+user_pref("app.update.lastUpdateTime.xpi-signature-verification", 1764757516);
 user_pref("basebrowser.migration.version", 3);
 user_pref("browser.bookmarks.restore_default_bookmarks", false);
 user_pref("browser.contentblocking.category", "standard");
@@ -35,7 +36,7 @@ user_pref("browser.startup.couldRestoreSession.count", 1);
 user_pref("browser.startup.homepage_override.buildID", "20251007120000");
 user_pref("browser.startup.homepage_override.mstone", "128.14.0");
 user_pref("browser.startup.homepage_override.torbrowser.version", "14.5.8");
-user_pref("browser.startup.lastColdStartupCheck", 1761985923);
+user_pref("browser.startup.lastColdStartupCheck", 1764757487);
 user_pref("browser.toolbars.bookmarks.visibility", "always");
 user_pref("browser.uiCustomization.state", "{\"placements\":{\"widget-overflow-fixed-list\":[],\"unified-extensions-area\":[],\"nav-bar\":[\"back-button\",\"forward-button\",\"stop-reload-button\",\"urlbar-container\",\"security-level-button\",\"new-identity-button\",\"downloads-button\",\"fxa-toolbar-menu-button\",\"_73a6fe31-595d-460b-a920-fcc0f8843232_-browser-action\",\"unified-extensions-button\"],\"toolbar-menubar\":[\"menubar-items\"],\"TabsToolbar\":[\"firefox-view-button\",\"tabbrowser-tabs\",\"new-tab-button\",\"alltabs-button\"],\"PersonalToolbar\":[\"personal-bookmarks\"]},\"seen\":[\"_73a6fe31-595d-460b-a920-fcc0f8843232_-browser-action\",\"developer-button\"],\"dirtyAreaCache\":[\"nav-bar\",\"unified-extensions-area\",\"PersonalToolbar\",\"toolbar-menubar\",\"TabsToolbar\"],\"currentVersion\":20,\"currentVersionBaseBrowser\":2,\"currentVersionTorBrowser\":1,\"newElementCount\":0}");
 user_pref("browser.urlbar.placeholderName.private", "DuckDuckGo");
@@ -82,7 +83,7 @@ user_pref("sanity-test.device-id", "0x9a49");
 user_pref("sanity-test.driver-version", "31.0.101.4502");
 user_pref("sanity-test.running", false);
 user_pref("sanity-test.version", "20251007120000");
-user_pref("toolkit.startup.last_success", 1761985921);
+user_pref("toolkit.startup.last_success", 1764757485);
 user_pref("toolkit.telemetry.cachedClientID", "ab300072-eca1-4e4d-afec-81edea3779aa");
 user_pref("toolkit.telemetry.reportingpolicy.firstRun", false);
 user_pref("torbrowser.about_torconnect.user_has_ever_clicked_connect", true);
