@@ -5,6 +5,29 @@ import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
 
+
+
+   const backLogin = async () => {
+      let data = await fetch("http://localhost:3030", {
+        method: "POST",
+        headers: { " Content-Type": "application/json" },
+        body: JSON.stringify({ username: "", password: "" }),
+      });
+      let res = await data.json();
+      console.log(res);
+        
+   }
+
+
+
+
+
+
+
+
+
+
+
       const Navigate = useNavigate()
       const sigup = () => { 
             Navigate('/Signup')
@@ -17,7 +40,7 @@ const Login = () => {
         <div className="signup-container">
             <div id="signup-middle">
             <h2>Log into instagram</h2>
-            <input type="text" placeholder='Phone number, username, or email' />
+            <input type="username" placeholder='Phone number, username, or email' />
             <input type="password" placeholder='Password' />
             <button id='login-btn'>Log In</button>
             <button id='forget-password-btn'>Forget password?</button>
