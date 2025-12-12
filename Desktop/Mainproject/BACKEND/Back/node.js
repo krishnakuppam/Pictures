@@ -7,6 +7,8 @@ app.use(cors());
 app.use(express.json());
 
 
+async function mongo () {
+    await mongos.connect()
 
 
 
