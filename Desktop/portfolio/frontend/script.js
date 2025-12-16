@@ -1,10 +1,33 @@
-// Name rotation is handled by CSS animation
-// This script file can be used for other interactive features
 
-  const text = document.getElementById("eyebrow");
-  const letters = text.innerText.split("");
 
-  text.innerHTML = letters
-    .map(letter => `<span>${letter}</span>`)
-    .join("");
+  // const text = document.getElementById("eyebrow");
+  // const letters = text.innerText.split("");
+
+  // text.innerHTML = letters
+  //   .map(letter => `<span>${letter}</span>`)
+  //   .join("");
+
+
+   function updateClock() {
+  const now = new Date();
+
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
+  let ampm = hours >= 12 ? 'PM' : 'AM';
+
+  hours = hours % 12 || 12;
+
+  hours = hours < 10 ? '0' + hours : hours;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  seconds = seconds < 10 ? '0' + seconds : seconds;
+
+  document.getElementById("clock").innerText =
+    `${hours}:${minutes}:${seconds} ${ampm}`;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+
+
 

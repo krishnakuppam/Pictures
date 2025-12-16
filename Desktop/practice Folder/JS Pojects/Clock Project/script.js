@@ -1,11 +1,10 @@
 function  updateClock() {
-
     const now = new Date();
     let hours = now.getHours();
     let minutes = now.getMinutes();
     let seconds = now.getSeconds();
     let ampm = "AM";
-    let DateString = now.toDateString();
+    
 
 
 
@@ -20,7 +19,7 @@ function  updateClock() {
     minutes = minutes < 10 ? "0" + minutes : minutes;
     seconds = seconds < 10 ? "0" + seconds : seconds;
 
-    const timestring = `${hours}:${minutes}:${seconds} ${ampm} - ${DateString}`;
+    const timestring = `${hours}:${minutes}:${seconds} ${ampm}`;
 
     document.getElementById("clock").textContent = timestring;
 
